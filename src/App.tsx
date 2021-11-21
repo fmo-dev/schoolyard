@@ -1,10 +1,9 @@
 import { ReactElement, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { DarkMode } from './DarkMode';
 import { GameRoutes } from './games/GameRoutes';
 import { Menu } from './pages/Menu/Menu';
-import { BrowserRouter as Router } from 'react-router-dom'
 
 export const App: React.FC = (): ReactElement => {
   const [darkMode, setdarkMode] = useState(false)
