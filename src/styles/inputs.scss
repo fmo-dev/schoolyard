@@ -1,0 +1,7 @@
+input {
+    padding: 10px;
+    border-radius: 10px;
+    &[type="text"] {
+      font-size: 20px;
+    }
+  }

@@ -1,0 +1,14 @@
+button {
+    padding: 5px 15px;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: $grey;
+    color: $black;
+    font-weight: bold;
+    transition: all .2s;
+    &:hover {
+        opacity: .7;
+    }
+}
