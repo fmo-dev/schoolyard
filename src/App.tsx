@@ -1,9 +1,8 @@
 import { ReactElement, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
 import { DarkMode } from './DarkMode';
-import { GameRoutes } from './games/GameRoutes';
-import { Menu } from './pages/Menu/Menu';
+import { RoutingComponent } from './RoutingComponent';
 
 export const App: React.FC = (): ReactElement => {
   const [darkMode, setdarkMode] = useState(false)
@@ -14,10 +13,7 @@ export const App: React.FC = (): ReactElement => {
         <DarkMode {...{ darkMode, setdarkMode }} />
         <section id="main_container">
 
-          <GameRoutes />
-          <Routes>
-            <Route path="/" element={<Menu />} />
-          </Routes>
+          <RoutingComponent />
 
         </section>
       </div>

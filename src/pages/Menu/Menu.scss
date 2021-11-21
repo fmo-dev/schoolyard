@@ -69,17 +69,20 @@
 
 #game_rules_panel { 
     #private_room_input {
-        width: 150px;
+        width: 100px;
         display: flex;
         height: 30px;
         & input {
-            width: 90px;
+            width: 85px;
             border-top-right-radius: 0;
+            text-transform: uppercase;
             border-bottom-right-radius: 0;
             height: 100%;
-            font-size: 14px;
+            font-size: 19px;
             padding: 0 10px;
             margin: 0;
+            font-family: $main_font;
+            letter-spacing: 3px;
             border: none;
             &:focus {
                 outline: none;
@@ -109,6 +112,10 @@
                 top: 2px;
                 left: 15px;
                 transform: rotate(45deg);
+            }
+            &:disabled {
+                cursor: default;
+                opacity: .5;
             }
         }
     }

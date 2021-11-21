@@ -3,18 +3,24 @@ class State {
     private _username: string;
 
     private constructor() {
-        let username = document.cookie;
-        if (!username) {
+        let username: string;
+        let cookies = document.cookie;
+        if (!cookies || cookies === 'username=') {
             username = 'Player_' + this._generateNumber();
-            document.cookie = username;
+        }
+        else {
+            username = cookies.replace('username=', '');
         }
         this._username = username;
     }
 
-
     public set username(value: string) {
+        const now = new Date();
+        now.setFullYear(now.getFullYear() + 1);
+        document.cookie = `username=${value};expires=${now.toUTCString()}`;
+        console.log(document.cookie);
+        
         this._username = value;
-        document.cookie = value;
     }
 
     get username(): string {

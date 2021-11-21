@@ -14,5 +14,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: Run Tests
         run: 
-          npm install --loglevel=error &&
-          npm test
+          npm install --loglevel=error && npm test
