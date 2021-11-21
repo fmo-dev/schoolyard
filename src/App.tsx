@@ -19,7 +19,6 @@ export const App: React.FC = (): ReactElement => {
             <Route path="/" element={<Menu />} />
           </Routes>
 
-
         </section>
       </div>
     </Router>
