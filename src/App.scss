@@ -1,0 +1,71 @@
+@import './index.scss';
+
+#schoolyard {
+    min-height: 100vh;
+    transition: all .2s;
+    background: $main_bg;
+    & * {
+        user-select: none;
+    }
+    &.dark_mode {
+        background: $bg_black;
+        & #main_container {
+            opacity: 0;
+        }
+    }
+    #main_container {
+        transition: opacity .2s;
+        padding: 20px 50px;
+        margin: 0 350px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #dark_mode_switch_container {
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        & span {
+            transition: opacity .2s;
+            margin-bottom: 5px;
+            font-size: 11px;
+            margin: 5px auto
+        }
+        & #dark_mode_switch {
+            align-items: flex-end;
+            width: 30px;
+            margin: 0 30px;
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            height: 15px;
+            &::before {
+                transition: all 0.4s;
+                position: absolute;
+                border-radius: 50%;
+                height: 10px;
+                width: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                content: " ";
+            }
+            &.active {
+                border: 0.2px solid #aaa;
+                &::before {
+                    left: 18px;
+                    background-color: #aaa;
+                }
+            }
+            &.default {
+                border: 0.2px solid #999;
+                &::before {
+                    left: 2px;
+                    background-color: #999;
+                }
+            }
+        }
+    }
+}

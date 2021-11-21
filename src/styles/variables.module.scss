@@ -1,0 +1,8 @@
+@import './fonts.scss';
+@import './colors.scss';
+
+:export {
+    titleFont: $title_font;
+    mainFont: $main_font;
+    titleColor: $title_color;
+}

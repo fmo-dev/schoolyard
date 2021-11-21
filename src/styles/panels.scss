@@ -1,0 +1,67 @@
+.panel_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(58, 58, 58, 0.644);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    & .panel {
+        margin: auto;
+        min-width: 600px;
+        min-height: 400px;
+        padding: 5px;
+        box-shadow: $box_shadow;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-color: rgb(195, 193, 193);
+        & .close {
+            cursor: pointer;
+            position: relative;
+            align-self: end;
+            width: 40px;
+            transition: all .2s;
+            height: 40px;
+            &::before,
+            &::after {
+                width: 2px;
+                height: 40px;
+                transition: all .2s;
+                position: absolute;
+                background-color: black;
+                content: " ";
+                transform-origin: center;
+                top: 0;
+                left: 50%;
+                transform: 50%;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+            &:hover {
+                opacity: .7;
+                &::before,
+                &::after {
+                    width: 3px;
+                }
+            }
+        }
+        & .panel_info {
+            & h1 {
+                margin: 0 auto;
+                text-align: center;
+                font-size: 34px;
+            }
+            & p {
+                width: 500px;
+                margin: 30px auto 0 auto;
+                font-size: 18px;
+            }
+        }
+    }
+}
