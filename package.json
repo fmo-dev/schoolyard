@@ -22,7 +22,8 @@
   "scripts": {
     "start": "set PORT=4200 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll",
+    "test": "react-scripts test --watchAll=false",
+    "test:coverage": "npm run test -- --collectCoverage && cat ./src/coverage/lcov.info | coveralls",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
