@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import { Game } from '..';
 
-const TicTacToe: React.FC = (state): ReactElement => {
+const TicTacToe: React.FC = (props): ReactElement => {
     return (
         <div></div>
     );

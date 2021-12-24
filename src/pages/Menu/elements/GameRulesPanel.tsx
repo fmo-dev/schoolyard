@@ -33,7 +33,7 @@ export const GameRulesPanel: React.FC<{ game: Game, close: () => void }> = (prop
                             :
                             <div id="private_room_input" >
                                 <input maxLength={4} type="text" onKeyUp={changeCode} onKeyDown={onKeyDown}/>
-                                <Link to={`${props.game.path}/${roomCode}`}><button disabled={roomCode.length < 4} id="join_private_room"></button></Link>
+                                <Link to={`${props.game.path}?room=${roomCode}`}><button disabled={roomCode.length < 4} id="join_private_room"></button></Link>
                             </div>
                     }
                 </section>

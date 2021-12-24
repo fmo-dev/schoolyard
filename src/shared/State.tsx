@@ -1,8 +1,10 @@
-class State {
-    private static _instance: State;
+import { Singleton } from "./singleton";
+
+class State extends Singleton {
     private _username: string;
 
     private constructor() {
+        super();
         let username: string;
         let cookies = document.cookie;
         if (!cookies || cookies === 'username=') {
@@ -18,25 +20,17 @@ class State {
         const now = new Date();
         now.setFullYear(now.getFullYear() + 1);
         document.cookie = `username=${value};expires=${now.toUTCString()}`;
-        console.log(document.cookie);
-        
         this._username = value;
     }
 
     get username(): string {
-        return this._username
+        return this._username;
     }
 
     private _generateNumber(): number {
         return Math.floor(Math.random() * (99999 - 10000 + 1)) + 100000;
     }
 
-    public static get(): State {
-        if (!this._instance) {
-            this._instance = new State();
-        }
-        return this._instance;
-    }
 }
 
-export const LocalState = State.get();
+export const LocalState = State.get() as State;

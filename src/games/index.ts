@@ -1,4 +1,4 @@
-import TicTacToe from "./TicTacToe"
+import TicTacToe from "./TicTacToe";
 
 export const AllGames: Game[] = [
     TicTacToe

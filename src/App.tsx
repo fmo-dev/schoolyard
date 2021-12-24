@@ -12,9 +12,7 @@ export const App: React.FC = (): ReactElement => {
       <div id="schoolyard" className={darkMode ? 'dark_mode' : 'light_mode'}  {...{ style }}>
         <DarkMode {...{ darkMode, setdarkMode }} />
         <section id="main_container">
-
           <RoutingComponent />
-
         </section>
       </div>
     </Router>
@@ -22,7 +20,6 @@ export const App: React.FC = (): ReactElement => {
 }
 
 export default App;
-
 
 const style: React.CSSProperties = {
   fontFamily: 'Ubuntu'
