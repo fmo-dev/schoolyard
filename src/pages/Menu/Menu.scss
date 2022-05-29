@@ -3,10 +3,10 @@
 #menu_container {
     padding: auto;
     & #menu_header {
+        width: 100%;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-bottom: 50px;
     }
     & #menu_body {
         margin-top: 20px;
@@ -67,55 +67,67 @@
     }
 }
 
-#game_rules_panel { 
-    #private_room_input {
-        width: 100px;
+#game_rules_panel {
+    padding: 20px;
+    #private_room {
         display: flex;
-        height: 30px;
-        & input {
-            width: 85px;
-            border-top-right-radius: 0;
-            text-transform: uppercase;
-            border-bottom-right-radius: 0;
-            height: 100%;
-            font-size: 19px;
-            padding: 0 10px;
-            margin: 0;
-            font-family: $main_font;
-            letter-spacing: 3px;
-            border: none;
-            &:focus {
-                outline: none;
-            }
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        & h2 {
+            font-size: 16px;
         }
-        & button {
-            width: 40px;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            height: 100%;
-            position: relative;
-            &::before, &::after {
-                content: ' ';
-                position: absolute;
-                width: 2px;
-                background-color: $black;
-                transform-origin: bottom;
+        #private_room_input {
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            height: 30px;
+            & input {
+                width: 85px;
+                border-top-right-radius: 0;
+                text-transform: uppercase;
+                border-bottom-right-radius: 0;
+                height: 100%;
+                font-size: 19px;
+                padding: 0 10px;
+                margin: 0;
+                font-family: $main_font;
+                letter-spacing: 3px;
+                border: none;
+                &:focus {
+                    outline: none;
+                }
             }
-            &::before {
-                left: 15px;
-                height: 10px;
-                bottom: 8px;
-                transform: rotate(-25deg);
-            }
-            &::after {
-                height: 20px;
-                top: 2px;
-                left: 15px;
-                transform: rotate(45deg);
-            }
-            &:disabled {
-                cursor: default;
-                opacity: .5;
+            & button {
+                width: 40px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                height: 100%;
+                position: relative;
+                &::before,
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    width: 2px;
+                    background-color: $black;
+                    transform-origin: bottom;
+                }
+                &::before {
+                    left: 15px;
+                    height: 10px;
+                    bottom: 8px;
+                    transform: rotate(-25deg);
+                }
+                &::after {
+                    height: 20px;
+                    top: 2px;
+                    left: 15px;
+                    transform: rotate(45deg);
+                }
+                &:disabled {
+                    cursor: default;
+                    opacity: 0.5;
+                }
             }
         }
     }

@@ -8,7 +8,7 @@ export interface Game   {
     name: string;
     game: React.FC;
     rules: {
-        maxPlayer: number;
+        maxPlayer?: number;
         minPlayer: number;
     }
     description: string,

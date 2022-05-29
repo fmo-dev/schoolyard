@@ -1,0 +1,13 @@
+#error_panel {
+    font-size: 16px;
+    min-height: 0px !important;
+    min-width: 0px !important;
+    // height: fit-content !important;
+    // width: fit-content !important;
+    padding: 15px;
+    & a {
+        display: flex;
+        justify-content: center;
+    }
+
+}

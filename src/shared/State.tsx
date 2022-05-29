@@ -7,11 +7,12 @@ class State extends Singleton {
         super();
         let username: string;
         let cookies = document.cookie;
-        if (!cookies || cookies === 'username=') {
+        const usernameCookie = cookies.split(';').find(cookie => cookie.includes('username='));
+        if (!usernameCookie || usernameCookie === 'username=') {
             username = 'Player_' + this._generateNumber();
         }
         else {
-            username = cookies.replace('username=', '');
+            username = usernameCookie.replace('username=', '');
         }
         this._username = username;
     }

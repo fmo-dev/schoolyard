@@ -1,10 +1,12 @@
 import { ChangeEventHandler, ReactElement } from 'react'
+import { SocketService } from '../../../shared/Socket';
 import { LocalState } from '../../../shared/State';
 
 export const Username: React.FC = (): ReactElement => {
 
     const changeUsername: ChangeEventHandler<HTMLInputElement> = (event): void => {
-        LocalState.username = event.target.value;
+        LocalState.username = event.target.value.trim();
+        SocketService.updateUsername();
     }
 
     return (<div style={style.main}>

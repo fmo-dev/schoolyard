@@ -2,7 +2,6 @@ import { ReactElement, useState } from "react";
 import { Game } from "../../games";
 import { GameList } from "./elements/GameList";
 import { GameRulesPanel } from "./elements/GameRulesPanel";
-import { Title } from "./elements/Title";
 import { Username } from "./elements/Username";
 import './Menu.scss';
 
@@ -17,7 +16,6 @@ export const Menu: React.FC = (): ReactElement => {
         <>
             <div id="menu_container" >
                 <header id="menu_header">
-                    <Title />
                     <Username />
                 </header>
                 <section id="menu_body">
